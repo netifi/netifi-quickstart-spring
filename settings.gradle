@@ -1,0 +1,5 @@
+rootProject.name = 'proteus-quickstart'
+include 'client'
+include 'service'
+include 'service-idl'
+

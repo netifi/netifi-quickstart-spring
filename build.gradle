@@ -1,0 +1,17 @@
+subprojects {
+    apply plugin: 'idea'
+
+    group 'io.netifi.proteus.quickstart'
+    version '1.0.0'
+
+    ext {
+        protobufVersion = '3.6.0'
+        proteusVersion = '0.7.15'
+        proteusSpringVersion = '0.3.0'
+        springbomVersion = 'Cairo-SR1'
+    }
+
+    repositories {
+        jcenter()
+    }
+}
