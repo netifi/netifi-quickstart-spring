@@ -37,6 +37,18 @@ Follow the steps below to
 4. Next, in a new terminal window, start the example quickstart client by running the following command:
 
         ./gradlew :client:run
+        
+5. If successful, the client will have sent the word, `World`, to the service and received the response `Hello, World! from SayHello`.
+
+    In the service terminal you will see the following message:
+    
+        2018-09-03 14:16:39.561  INFO 46994 --- [actor-tcp-nio-6] i.n.p.q.service.DefaultHelloService      : received a message -> World
+
+    In the client terminal you will see the following message:
+    
+        2018-09-03 14:16:39.571  INFO 46998 --- [           main] i.n.p.quickstart.client.ClientRunner     : message: "Hello, World! from SayHello"
+
+Congratulations! You were able to get a Proteus Broker up and running and send a message between a client and a microservice.
 
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/netifi/proteus-spring-quickstart/issues).
