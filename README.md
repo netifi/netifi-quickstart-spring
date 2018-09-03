@@ -5,6 +5,39 @@ The project comes with a simple client and service. The client sends the word `W
 
 * [Netifi Proteus Spring Quick Start Guide](https://github.com/netifi/proteus-spring-quickstart/wiki/Proteus-Spring-5-minute-Quick-Start)
 
+## Prerequisites
+The Proteus Spring QuickStart requires you have the following items installed on your machine:
+
+* [Docker](https://docs.docker.com/install/)
+
+## Getting Started
+Follow the steps below to
+
+1. In a new terminal window, pull the latest Proteus Broker Docker image by running the following command:
+
+        docker pull netifi/proteus
+        
+2. Next, run the following command to start the Proteus Broker:
+
+        docker run \
+        -p 8001:8001 \
+        -p 8101:8101 \
+        -p 7001:7001 \
+        -e BROKER_SERVER_OPTS="'-Dnetifi.authentication.0.accessKey=9007199254740991'  \
+        '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
+        '-Dnetifi.broker.admin.accessKey=9007199254740991' \
+        '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
+        '-Dnetifi.broker.ssl.disabled=true'" \
+        netifi/proteus
+
+3. In a new terminal window, start the example quickstart service by running the following command:
+
+        ./gradlew :service:run
+        
+4. Next, in a new terminal window, start the example quickstart client by running the following command:
+
+        ./gradlew :client:run
+
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/netifi/proteus-spring-quickstart/issues).
 

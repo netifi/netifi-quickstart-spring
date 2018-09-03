@@ -3,7 +3,7 @@ package io.netifi.proteus.quickstart.service.protobuf;
 /**
  */
 @javax.annotation.Generated(
-    value = "by Proteus proto compiler (version 0.7.15)",
+    value = "by Proteus proto compiler (version 0.8.9)",
     comments = "Source: io/netifi/proteus/quickstart/service/protobuf/service.proto")
 public interface BlockingHelloService {
   String SERVICE_ID = "io.netifi.proteus.quickstart.service.HelloService";

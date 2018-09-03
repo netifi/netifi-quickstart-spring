@@ -1,7 +1,7 @@
 package io.netifi.proteus.quickstart.service.protobuf;
 
 @javax.annotation.Generated(
-    value = "by Proteus proto compiler (version 0.7.15)",
+    value = "by Proteus proto compiler (version 0.8.9)",
     comments = "Source: io/netifi/proteus/quickstart/service/protobuf/service.proto")
 @io.netifi.proteus.annotations.internal.ProteusGenerated(
     type = io.netifi.proteus.annotations.internal.ProteusResourceType.SERVICE,
@@ -10,14 +10,24 @@ package io.netifi.proteus.quickstart.service.protobuf;
     value ="HelloServiceServer")
 public final class HelloServiceServer extends io.netifi.proteus.AbstractProteusService {
   private final HelloService service;
+  private final io.opentracing.Tracer tracer;
   private final java.util.function.Function<? super org.reactivestreams.Publisher<io.rsocket.Payload>, ? extends org.reactivestreams.Publisher<io.rsocket.Payload>> sayHello;
+  private final java.util.function.Function<io.opentracing.SpanContext, java.util.function.Function<? super org.reactivestreams.Publisher<io.rsocket.Payload>, ? extends org.reactivestreams.Publisher<io.rsocket.Payload>>> sayHelloTrace;
   @javax.inject.Inject
-  public HelloServiceServer(HelloService service, java.util.Optional<io.micrometer.core.instrument.MeterRegistry> registry) {
+  public HelloServiceServer(HelloService service, java.util.Optional<io.micrometer.core.instrument.MeterRegistry> registry, java.util.Optional<io.opentracing.Tracer> tracer) {
     this.service = service;
     if (!registry.isPresent()) {
       this.sayHello = java.util.function.Function.identity();
     } else {
       this.sayHello = io.netifi.proteus.metrics.ProteusMetrics.timed(registry.get(), "proteus.server", "service", HelloService.SERVICE, "method", HelloService.METHOD_SAY_HELLO);
+    }
+
+    if (!tracer.isPresent()) {
+      this.tracer = null;
+      this.sayHelloTrace = io.netifi.proteus.tracing.ProteusTracing.traceAsChild();
+    } else {
+      this.tracer = tracer.get();
+      this.sayHelloTrace = io.netifi.proteus.tracing.ProteusTracing.traceAsChild(this.tracer, HelloService.METHOD_SAY_HELLO, io.netifi.proteus.tracing.Tag.of("proteus.service", HelloService.SERVICE), io.netifi.proteus.tracing.Tag.of("proteus.type", "server"), io.netifi.proteus.tracing.Tag.of("proteus.version", "0.8.9"));
     }
 
   }
@@ -41,10 +51,11 @@ public final class HelloServiceServer extends io.netifi.proteus.AbstractProteusS
   public reactor.core.publisher.Mono<io.rsocket.Payload> requestResponse(io.rsocket.Payload payload) {
     try {
       io.netty.buffer.ByteBuf metadata = payload.sliceMetadata();
+      io.opentracing.SpanContext spanContext = io.netifi.proteus.tracing.ProteusTracing.deserializeTracingMetadata(tracer, metadata);
       switch(io.netifi.proteus.frames.ProteusMetadata.getMethod(metadata)) {
         case HelloService.METHOD_SAY_HELLO: {
           com.google.protobuf.CodedInputStream is = com.google.protobuf.CodedInputStream.newInstance(payload.getData());
-          return service.sayHello(io.netifi.proteus.quickstart.service.protobuf.HelloRequest.parseFrom(is), metadata).map(serializer).transform(sayHello);
+          return service.sayHello(io.netifi.proteus.quickstart.service.protobuf.HelloRequest.parseFrom(is), metadata).map(serializer).transform(sayHello).transform(sayHelloTrace.apply(spanContext));
         }
         default: {
           return reactor.core.publisher.Mono.error(new UnsupportedOperationException());

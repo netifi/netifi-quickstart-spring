@@ -6,12 +6,15 @@ subprojects {
 
     ext {
         protobufVersion = '3.6.0'
-        proteusVersion = '0.7.15'
+        proteusVersion = '0.8.9'
         proteusSpringVersion = '0.3.0'
         springbomVersion = 'Cairo-SR1'
     }
 
     repositories {
         jcenter()
+        maven {
+            url 'https://dl.bintray.com/netifi/netifi-oss/'
+        }
     }
 }
