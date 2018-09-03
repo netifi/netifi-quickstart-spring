@@ -11,7 +11,7 @@ The Proteus Spring QuickStart requires you have the following items installed on
 * [Docker](https://docs.docker.com/install/)
 
 ## Getting Started
-Follow the steps below to
+Follow the steps below to get a client and service communicating via Proteus in just a few short minutes.
 
 1. In a new terminal window, pull the latest Proteus Broker Docker image by running the following command:
 
