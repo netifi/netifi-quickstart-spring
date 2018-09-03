@@ -38,7 +38,7 @@ Follow the steps below to
 
         ./gradlew :client:run
         
-5. If successful, the client will have sent the word, `World`, to the service and received the response `Hello, World! from SayHello`.
+5. If successful, the client will have sent the word, `World`, to the service and received the response `Hello, World! from SayHello`. You can verify this by checking the terminals for the following:
 
     In the service terminal you will see the following message:
     
