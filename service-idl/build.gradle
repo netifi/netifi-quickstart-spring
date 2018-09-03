@@ -50,5 +50,5 @@ idea {
 }
 
 clean {
-    delete 'src/generated'
+    delete 'src/generated/main'
 }
