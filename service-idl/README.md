@@ -4,7 +4,7 @@ This project holds the definition of your service's public interface (The method
 ## Instructions
 Define the interface for your service using ProtoBuf IDL in the `src/main/proto` directory.
 
-An example service interface has been provided for you: https://github.com/netifi/proteus-quickstart/blob/master/service-idl/src/main/proto/io/netifi/proteus/quickstart/service/protobuf/service.proto
+An example service interface has been provided for you: [service.proto](https://github.com/netifi/proteus-quickstart/blob/master/service-idl/src/main/proto/io/netifi/proteus/quickstart/service/protobuf/service.proto)
 
 ## Documentation
-Documentation on the IDL format can be found here: http://proteus-java.readthedocs.io/en/latest/
+Documentation on the IDL format can be found here: [http://docs.netifi.com/protobuf_rsocket/](http://docs.netifi.com/protobuf_rsocket/)
