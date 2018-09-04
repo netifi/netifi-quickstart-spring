@@ -3,7 +3,12 @@ This project provides a scaffolding for getting up and running quickly with [Net
 
 The project comes with a simple client and service. The client sends the word `World` to the service and the service responds with the message `Hello, World! from {service name}`.
 
-* [Netifi Proteus Spring QuickStart Guide](https://www.netifi.com/getstarted-springboot)
+## Projects
+This repo contains the following projects:
+
+* [client](client) - Client that sends data to the service
+* [service](service) - Service that responds to the client
+* [service-idl](service-idl) - Definition of the API served by the service
 
 ## Prerequisites
 The Proteus Spring QuickStart requires you have the following items installed on your machine:
