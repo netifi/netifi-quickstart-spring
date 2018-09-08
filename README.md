@@ -33,8 +33,7 @@ Follow the steps below to get a client and service communicating via Proteus in 
         -e BROKER_SERVER_OPTS="'-Dnetifi.authentication.0.accessKey=9007199254740991'  \
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
-        '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
-        '-Dnetifi.broker.ssl.disabled=true'" \
+        '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
         netifi/proteus
 
 3. In a new terminal window, start the example quickstart service by running the following command:
