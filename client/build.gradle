@@ -1,8 +1,8 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.springframework.boot' version '2.0.2.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.5.RELEASE'
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
 }
 
 mainClassName = 'io.netifi.proteus.quickstart.client.Main'
@@ -17,7 +17,7 @@ dependencyManagement {
 dependencies {
     compile project(':service-idl')
 
-    compile "com.netifi.proteus:proteus-spring-boot-starter:$proteusSpringVersion"
+    compile "io.netifi.proteus:proteus-spring-boot-starter:$proteusSpringVersion"
 }
 
 configurations.all {
