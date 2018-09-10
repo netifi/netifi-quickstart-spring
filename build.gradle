@@ -6,10 +6,10 @@ subprojects {
 
     ext {
         protobufVersion = '3.6.0'
-        proteusVersion = '0.9.1'
-        rsocketRpcVersion = '0.2.1'
-        proteusSpringVersion = '0.4.1'
-        springbomVersion = 'Cairo-SR3'
+        proteusVersion = '0.9.0'
+        rsocketRpcVersion = '0.2.0'
+        proteusSpringVersion = '0.4.2'
+        springbomVersion = 'Cairo-SR1'
     }
 
     repositories {
