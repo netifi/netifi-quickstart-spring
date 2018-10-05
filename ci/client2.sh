@@ -1,1 +1,1 @@
-cd .. && ./gradlew client:run
+cd .. && ./gradlew :client:run
