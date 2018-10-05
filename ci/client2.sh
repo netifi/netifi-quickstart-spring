@@ -1,1 +1,1 @@
-exit 0
+cd .. && ./gradlew :client:run
