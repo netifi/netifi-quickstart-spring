@@ -1,1 +1,1 @@
-cd .. && ./gradlew :service:run
+cd .. && ./gradlew service:run
