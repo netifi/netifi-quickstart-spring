@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.netifi.proteus.quickstart</groupId>
+    <artifactId>proteus-quickstart</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>multi</name>
+    <modules>
+        <module>client</module>
+        <module>service</module>
+        <module>service-idl</module>
+    </modules>
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <proteusVersion>0.9.0</proteusVersion>
+        <proteusSpringVersion>0.4.2</proteusSpringVersion>
+        <rsocketRpcVersion>0.2.0</rsocketRpcVersion>
+        <protobufVersion>3.6.0</protobufVersion>
+        <log4j2Version>2.9.0</log4j2Version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>netifi-oss</id>
+            <url>https://dl.bintray.com/netifi/netifi-oss/</url>
+        </repository>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+</project>
