@@ -1,1 +1,1 @@
-cd .. && ./gradlew client:run
+cd .. && ./gradlew --no-daemon client:run
