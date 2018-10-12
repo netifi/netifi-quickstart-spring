@@ -1,0 +1,1 @@
+cd .. && ./gradlew --no-daemon service:run
