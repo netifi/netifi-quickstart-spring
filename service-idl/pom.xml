@@ -16,6 +16,11 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
+            <groupId>io.netifi.proteus</groupId>
+            <artifactId>proteus-client</artifactId>
+            <version>${proteusVersion}</version>
+        </dependency>
+        <dependency>
             <groupId>io.rsocket.rpc</groupId>
             <artifactId>rsocket-rpc-core</artifactId>
             <version>${rsocketRpcVersion}</version>

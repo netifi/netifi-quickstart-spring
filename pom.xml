@@ -31,7 +31,7 @@
         </repository>
         <repository>
             <id>netifi-internal</id>
-            <url>https://artifactory.netifiinc.com/artifactory/libs-release-local</url>
+            <url>https://artifactory.netifiinc.com/artifactory/libs-release-local/</url>
         </repository>
     </repositories>
 </project>
