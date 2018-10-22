@@ -2,20 +2,27 @@ subprojects {
     apply plugin: 'idea'
 
     group 'io.netifi.proteus.quickstart'
-    version '1.0.0'
+    version '1.5.0-RC'
 
     ext {
-        protobufVersion = '3.6.0'
-        proteusVersion = '0.9.0'
-        rsocketRpcVersion = '0.2.0'
-        proteusSpringVersion = '0.4.2'
-        springbomVersion = 'Cairo-SR1'
+        protobufVersion = '3.6.1'
+        proteusVersion = '1.5.0-RC'
+        rsocketRpcVersion = '0.2.4'
+        proteusSpringVersion = '1.5.0-RC'
+        springBootBomVersion = '2.0.5.RELEASE'
     }
 
     repositories {
         jcenter()
         maven {
             url 'https://dl.bintray.com/netifi/netifi-oss/'
+        }
+        maven {
+            url = version.contains('SNAPSHOT') ? 'https://artifactory.netifiinc.com/artifactory/libs-snapshot-local' : 'https://artifactory.netifiinc.com/artifactory/libs-release-local'
+            credentials {
+                username = project.property('netifiArtifactoryUsername')
+                password = project.property('netifiArtifactoryPassword')
+            }
         }
     }
 }

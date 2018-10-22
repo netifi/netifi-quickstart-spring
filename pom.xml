@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.netifi.proteus.quickstart</groupId>
     <artifactId>proteus-quickstart</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.5.0-RC</version>
     <packaging>pom</packaging>
     <name>multi</name>
     <modules>
@@ -14,10 +14,10 @@
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <proteusVersion>0.9.0</proteusVersion>
-        <proteusSpringVersion>0.4.2</proteusSpringVersion>
-        <rsocketRpcVersion>0.2.0</rsocketRpcVersion>
-        <protobufVersion>3.6.0</protobufVersion>
+        <proteusVersion>1.5.0-RC</proteusVersion>
+        <proteusSpringVersion>1.5.0-RC</proteusSpringVersion>
+        <rsocketRpcVersion>0.2.4</rsocketRpcVersion>
+        <protobufVersion>3.6.1</protobufVersion>
         <log4j2Version>2.9.0</log4j2Version>
     </properties>
     <repositories>
@@ -28,6 +28,10 @@
         <repository>
             <id>jcenter</id>
             <url>https://jcenter.bintray.com/</url>
+        </repository>
+        <repository>
+            <id>netifi-internal</id>
+            <url>https://artifactory.netifiinc.com/artifactory/libs-release-local</url>
         </repository>
     </repositories>
 </project>

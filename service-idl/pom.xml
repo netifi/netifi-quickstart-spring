@@ -7,12 +7,12 @@
     <parent>
         <groupId>io.netifi.proteus.quickstart</groupId>
         <artifactId>proteus-quickstart</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.5.0-RC</version>
     </parent>
 
     <artifactId>service-idl</artifactId>
     <name>service-idl</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.5.0-RC</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
