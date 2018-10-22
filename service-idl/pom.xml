@@ -21,6 +21,33 @@
             <version>${proteusVersion}</version>
         </dependency>
         <dependency>
+            <groupId>io.netifi.proteus</groupId>
+            <artifactId>proteus-metrics-micrometer</artifactId>
+            <version>${proteusVersion}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.rsocket.rpc</groupId>
+                    <artifactId>rsocket-rpc-protobuf</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.netifi.proteus</groupId>
+            <artifactId>proteus-tracing-openzipkin</artifactId>
+            <version>${proteusVersion}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.rsocket.rpc</groupId>
+                    <artifactId>rsocket-rpc-protobuf</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
             <groupId>io.rsocket.rpc</groupId>
             <artifactId>rsocket-rpc-core</artifactId>
             <version>${rsocketRpcVersion}</version>
@@ -47,6 +74,24 @@
             </extension>
         </extensions>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/protobuf/java</source>
+                                <source>${project.build.directory}/generated-sources/protobuf/rsocketRpc</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
