@@ -47,7 +47,8 @@
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.5.1</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protobufVersion}:exe:${os.detected.classifier}
+                    <protocArtifact>
+                        com.google.protobuf:protoc:${protobufVersion}:exe:${os.detected.classifier}
                     </protocArtifact>
                     <pluginId>rsocketRpc</pluginId>
                     <pluginArtifact>
