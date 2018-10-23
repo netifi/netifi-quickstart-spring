@@ -2,7 +2,7 @@ package io.netifi.proteus.quickstart.client;
 
 import io.netifi.proteus.quickstart.service.protobuf.HelloRequest;
 import io.netifi.proteus.quickstart.service.protobuf.HelloServiceClient;
-import io.rsocket.rpc.annotations.Client;
+import io.netifi.proteus.spring.core.annotation.Group;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class ClientRunner implements CommandLineRunner {
     private static final Logger logger = LogManager.getLogger(ClientRunner.class);
 
-    @Client(group = "quickstart.services.helloservices")
+    @Group("quickstart.services.helloservices")
     private HelloServiceClient client;
     
     @Override
