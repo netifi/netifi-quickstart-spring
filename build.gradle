@@ -1,3 +1,7 @@
+plugins {
+    id "com.github.ben-manes.versions" version "0.20.0"
+}
+
 subprojects {
     apply plugin: 'idea'
 
@@ -5,9 +9,9 @@ subprojects {
     version '1.0.0'
 
     ext {
-        protobufVersion = '3.6.0'
-        proteusVersion = '0.9.0'
-        rsocketRpcVersion = '0.2.0'
+        protobufVersion = '3.6.1'
+        proteusVersion = '0.9.5'
+        rsocketRpcVersion = '0.2.4'
         proteusSpringVersion = '0.4.2'
         springbomVersion = 'Cairo-SR1'
     }
