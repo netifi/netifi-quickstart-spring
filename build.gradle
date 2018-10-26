@@ -17,12 +17,5 @@ subprojects {
         maven {
             url 'https://dl.bintray.com/netifi/netifi-oss/'
         }
-        maven {
-            url = version.contains('SNAPSHOT') ? 'https://artifactory.netifiinc.com/artifactory/libs-snapshot-local' : 'https://artifactory.netifiinc.com/artifactory/libs-release-local'
-            credentials {
-                username = project.property('netifiArtifactoryUsername')
-                password = project.property('netifiArtifactoryPassword')
-            }
-        }
     }
 }

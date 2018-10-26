@@ -94,6 +94,16 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
+.project
+
+**/.settings/*
+
+.vscode
+
+.classpath
+
+bin/
+
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
