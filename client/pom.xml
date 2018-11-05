@@ -6,30 +6,30 @@
     <parent>
         <groupId>io.netifi.proteus.quickstart</groupId>
         <artifactId>proteus-quickstart</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.2</version>
     </parent>
 
     <artifactId>client</artifactId>
     <name>client</name>
-    <version>1.5.0</version>
+    <version>${parent.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>io.netifi.proteus.quickstart</groupId>
             <artifactId>service-idl</artifactId>
-            <version>1.5.0</version>
+            <version>${parent.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-spring-boot-starter</artifactId>
-            <version>${proteusSpringVersion}</version>
+            <version>${proteus.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
-            <version>2.0.2.RELEASE</version>
+            <version>${spring.boot.version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -48,7 +48,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.0.5.RELEASE</version>
+                <version>${spring.boot.version}</version>
             </plugin>
         </plugins>
     </build>

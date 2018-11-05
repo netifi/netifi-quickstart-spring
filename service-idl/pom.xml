@@ -7,23 +7,23 @@
     <parent>
         <groupId>io.netifi.proteus.quickstart</groupId>
         <artifactId>proteus-quickstart</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.2</version>
     </parent>
 
     <artifactId>service-idl</artifactId>
     <name>service-idl</name>
-    <version>1.5.0</version>
+    <version>${parent.version}</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-client</artifactId>
-            <version>${proteusVersion}</version>
+            <version>${proteus.version}</version>
         </dependency>
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-metrics-micrometer</artifactId>
-            <version>${proteusVersion}</version>
+            <version>${proteus.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.rsocket.rpc</groupId>
@@ -34,7 +34,7 @@
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-tracing-openzipkin</artifactId>
-            <version>${proteusVersion}</version>
+            <version>${proteus.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.rsocket.rpc</groupId>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>io.rsocket.rpc</groupId>
             <artifactId>rsocket-rpc-core</artifactId>
-            <version>${rsocketRpcVersion}</version>
+            <version>${rsocket.rpc.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.rsocket.rpc</groupId>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>${protobufVersion}</version>
+            <version>${protobuf.version}</version>
         </dependency>
     </dependencies>
 
@@ -98,11 +98,11 @@
                 <version>0.5.1</version>
                 <configuration>
                     <protocArtifact>
-                        com.google.protobuf:protoc:${protobufVersion}:exe:${os.detected.classifier}
+                        com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
                     </protocArtifact>
                     <pluginId>rsocketRpc</pluginId>
                     <pluginArtifact>
-                        io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}:exe:${os.detected.classifier}
+                        io.rsocket.rpc:rsocket-rpc-protobuf:${rsocket.rpc.version}:exe:${os.detected.classifier}
                     </pluginArtifact>
                 </configuration>
                 <executions>
