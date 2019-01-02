@@ -2,14 +2,14 @@ subprojects {
     apply plugin: 'idea'
 
     group 'io.netifi.proteus.quickstart'
-    version '1.5.2'
+    version '1.5.3'
 
     ext {
         protobufVersion = '3.6.1'
-        proteusVersion = '1.5.2'
-        rsocketRpcVersion = '0.2.10'
-        proteusSpringVersion = '1.5.2'
-        springBootBomVersion = '2.0.6.RELEASE'
+        proteusVersion = '1.5.3'
+        rsocketRpcVersion = '0.2.12'
+        proteusSpringVersion = '1.5.3'
+        springBootBomVersion = '2.1.1.RELEASE'
     }
 
     repositories {
