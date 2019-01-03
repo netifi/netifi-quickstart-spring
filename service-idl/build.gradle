@@ -1,5 +1,5 @@
 plugins {
-    id 'com.google.protobuf' version '0.8.5'
+    id 'com.google.protobuf' version '0.8.7'
     id 'java'
 }
 
@@ -7,7 +7,7 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile "io.netifi.proteus:proteus-client:$proteusVersion"
-    compile 'com.google.protobuf:protobuf-java:3.6.1'
+    compile "com.google.protobuf:protobuf-java:$protobufVersion"
 }
 
 sourceSets {
@@ -24,7 +24,7 @@ protobuf {
     generatedFilesBaseDir = "${projectDir}/src/generated"
 
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.6.1'
+        artifact = "com.google.protobuf:protoc:$protobufVersion"
     }
     plugins {
         rsocketRpc {
