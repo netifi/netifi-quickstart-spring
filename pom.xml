@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.netifi.proteus.quickstart</groupId>
     <artifactId>proteus-quickstart</artifactId>
-    <version>1.5.3</version>
+    <version>1.5.5</version>
     <packaging>pom</packaging>
     <name>multi</name>
     <modules>
