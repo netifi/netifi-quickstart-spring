@@ -7,12 +7,12 @@
     <parent>
         <groupId>io.netifi.proteus.quickstart</groupId>
         <artifactId>proteus-quickstart</artifactId>
-        <version>1.5.3</version>
+        <version>1.5.5</version>
     </parent>
 
     <artifactId>service</artifactId>
     <name>service</name>
-    <version>${parent.version}</version>
+    <version>${project.parent.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-spring-boot-starter</artifactId>
-            <version>${project.version}</version>
+            <version>${proteus.spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

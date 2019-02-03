@@ -15,6 +15,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <proteus.version>${project.version}</proteus.version>
+        <proteus.spring.version>1.5.3</proteus.spring.version>
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
         <rsocket.rpc.version>0.2.12</rsocket.rpc.version>
         <protobuf.version>3.6.1</protobuf.version>
