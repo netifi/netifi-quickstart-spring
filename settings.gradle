@@ -13,7 +13,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'proteus-quickstart'
+rootProject.name = 'proteus-spring-quickstart'
 include 'client'
 include 'service'
 include 'service-idl'
