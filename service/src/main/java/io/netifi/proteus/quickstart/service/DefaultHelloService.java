@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @Component
 public class DefaultHelloService implements HelloService {
   private static final Logger logger = LogManager.getLogger(DefaultHelloService.class);
-  
+
   @Override
   public Mono<HelloResponse> sayHello(HelloRequest message, ByteBuf metadata) {
     logger.info("received a message -> {}", message.getName());

@@ -27,11 +27,13 @@ Follow the steps below to get a client and service communicating via Proteus in 
 2. Next, run the following command to start the Proteus Broker:
 
         docker run \
-        -p 8001:8001 \
         -p 7001:7001 \
+        -p 8001:8001 \
+        -p 8101:8101 \
         -p 9000:9000 \
-        -e BROKER_SERVER_OPTS="'-Dnetifi.authentication.0.accessKey=9007199254740991'  \
+        -e BROKER_SERVER_OPTS=" \
         '-Dnetifi.broker.console.enabled=true' \
+        '-Dnetifi.authentication.0.accessKey=9007199254740991'  \
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
         '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
@@ -39,11 +41,11 @@ Follow the steps below to get a client and service communicating via Proteus in 
 
 3. In a new terminal window, start the example quickstart service by running the following command:
 
-        ./gradlew :service:run
+        ./gradlew :service:bootRun
         
 4. Next, in a new terminal window, start the example quickstart client by running the following command:
 
-        ./gradlew :client:run
+        ./gradlew :client:bootRun
         
 5. If successful, the client will have sent the word, `World`, to the service and received the response `Hello, World! from SayHello`. You can verify this by checking the terminals for the following:
 

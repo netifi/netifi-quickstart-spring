@@ -108,3 +108,5 @@ bin/
 # gradle/wrapper/gradle-wrapper.properties
 
 # End of https://www.gitignore.io/api/java,linux,macos,gradle,android,intellij,androidstudio
+
+**/generated/
