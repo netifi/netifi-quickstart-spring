@@ -14,7 +14,7 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="io.netifi.proteus" level="error" additivity="false">
+    <logger name="io.netifi.proteus" level="info" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 

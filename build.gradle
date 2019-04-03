@@ -1,21 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.M1' apply false
+    id 'com.google.protobuf' version '0.8.8' apply false
+    id 'com.diffplug.gradle.spotless' version '3.21.1' apply false
+}
+
 subprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'com.google.protobuf'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.diffplug.gradle.spotless'
 
     group 'io.netifi.proteus.quickstart'
     version '1.6.0'
 
-    ext {
-        protobufVersion = '3.6.1'
-        proteusVersion = '1.6.0'
-        rsocketRpcVersion = '0.2.13.3'
-        proteusSpringVersion = '1.6.0'
-        springBootBomVersion = '2.1.1.RELEASE'
+    dependencyManagement {
+        imports {
+            mavenBom "io.netifi.proteus:proteus-rsocket-bom:${project.version}"
+            mavenBom "io.netifi.proteus:proteus-bom:${project.version}"
+            mavenBom "io.netifi.proteus:proteus-common-dependencies:${project.version}"
+        }
     }
 
     repositories {
         jcenter()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
         maven {
             url 'https://dl.bintray.com/netifi/netifi-oss/'
+        }
+    }
+
+    spotless {
+        java {
+            googleJavaFormat()
+            removeUnusedImports()
         }
     }
 }
