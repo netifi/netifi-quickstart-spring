@@ -1,28 +1,12 @@
 plugins {
-    id 'java'
-    id 'application'
-    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+    id 'org.springframework.boot'
 }
 
-mainClassName = 'io.netifi.proteus.quickstart.client.Main'
-sourceCompatibility = 1.8
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootBomVersion}"
-    }
+springBoot {
+    mainClassName = 'io.netifi.proteus.quickstart.client.Main'
 }
 
 dependencies {
-    compile project(':service-idl')
-
-    compile "io.netifi.proteus:proteus-spring-boot-starter:$proteusSpringVersion"
-}
-
-configurations.all {
-    resolutionStrategy {
-        dependencySubstitution {
-            substitute module('com.google.guava:guava') with module('com.google.guava:guava:22.0')
-        }
-    }
+    implementation project(':service-idl')
+    implementation "io.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
 }

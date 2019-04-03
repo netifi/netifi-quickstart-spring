@@ -1,13 +1,6 @@
-plugins {
-    id 'com.google.protobuf' version '0.8.7'
-    id 'java'
-}
-
-sourceCompatibility = 1.8
-
 dependencies {
-    compile "io.netifi.proteus:proteus-client:$proteusVersion"
-    compile "com.google.protobuf:protobuf-java:$protobufVersion"
+    implementation "io.rsocket.rpc:rsocket-rpc-core"
+    implementation "com.google.protobuf:protobuf-java"
 }
 
 sourceSets {
@@ -24,13 +17,15 @@ protobuf {
     generatedFilesBaseDir = "${projectDir}/src/generated"
 
     protoc {
-        artifact = "com.google.protobuf:protoc:$protobufVersion"
+        artifact = "com.google.protobuf:protoc"
     }
+
     plugins {
         rsocketRpc {
-            artifact = "io.rsocket.rpc:rsocket-rpc-protobuf:$rsocketRpcVersion"
+            artifact = "io.rsocket.rpc:rsocket-rpc-protobuf"
         }
     }
+
     generateProtoTasks {
         ofSourceSet('main')*.plugins {
             rsocketRpc {}
@@ -50,5 +45,5 @@ idea {
 }
 
 clean {
-    delete 'src/generated/main'
+    delete 'src/generated'
 }
