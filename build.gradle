@@ -12,17 +12,13 @@ subprojects {
     apply plugin: 'com.diffplug.gradle.spotless'
 
     group 'io.netifi.proteus.quickstart'
-    version '0.0.1'
-
-    ext {
-        proteusSpringVersion = "1.6.0"
-    }
+    version '1.6.0'
 
     dependencyManagement {
         imports {
-            mavenBom "io.netifi.proteus:proteus-rsocket-bom:1.6.0"
-            mavenBom "io.netifi.proteus:proteus-bom:1.6.0"
-            mavenBom "io.netifi.proteus:proteus-common-dependencies:1.6.0"
+            mavenBom "io.netifi.proteus:proteus-rsocket-bom:${project.version}"
+            mavenBom "io.netifi.proteus:proteus-bom:${project.version}"
+            mavenBom "io.netifi.proteus:proteus-common-dependencies:${project.version}"
         }
     }
 

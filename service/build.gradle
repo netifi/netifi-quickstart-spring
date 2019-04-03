@@ -8,5 +8,5 @@ springBoot{
 
 dependencies {
     implementation project(':service-idl')
-    implementation "io.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
+    implementation "io.netifi.proteus:proteus-spring-boot-starter:${project.version}"
 }
