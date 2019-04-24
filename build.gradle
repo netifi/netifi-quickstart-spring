@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.0.M1' apply false
+    id 'org.springframework.boot' version '2.1.4.RELEASE' apply false
     id 'com.google.protobuf' version '0.8.8' apply false
     id 'com.diffplug.gradle.spotless' version '3.21.1' apply false
 }
@@ -11,14 +11,16 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.diffplug.gradle.spotless'
 
-    group 'io.netifi.proteus.quickstart'
-    version '1.6.0'
-
     dependencyManagement {
-        imports {
-            mavenBom "io.netifi.proteus:proteus-rsocket-bom:${project.version}"
-            mavenBom "io.netifi.proteus:proteus-bom:${project.version}"
-            mavenBom "io.netifi.proteus:proteus-common-dependencies:${project.version}"
+
+        dependencies {
+            dependency "io.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
+            dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
+            dependency "com.google.protobuf:protoc:${protobufVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
+            dependency "io.rsocket:rsocket-core:${rsocketVersion}"
+            dependency "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
         }
     }
 
