@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.netifi.proteus.quickstart</groupId>
     <artifactId>proteus-quickstart</artifactId>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
   </parent>
 
   <artifactId>client</artifactId>
   <name>client</name>
-  <version>1.6.0</version>
+  <version>1.6.1</version>
   <packaging>jar</packaging>
 
   <dependencies>
@@ -26,12 +26,11 @@
     <dependency>
       <groupId>io.netifi.proteus</groupId>
       <artifactId>proteus-spring-boot-starter</artifactId>
-      <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+      </dependency>
   </dependencies>
 
   <build>
@@ -41,7 +40,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
         <configuration>
-          <mainClass>io.netifi.proteus.quickstart.service.Main</mainClass>
+          <mainClass>io.netifi.proteus.quickstart.client.Main</mainClass>
         </configuration>
       </plugin>
     </plugins>

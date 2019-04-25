@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.netifi.proteus.quickstart</groupId>
     <artifactId>proteus-quickstart</artifactId>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
   </parent>
 
   <artifactId>service</artifactId>
   <name>service</name>
-  <version>1.6.0</version>
+  <version>1.6.1</version>
   <packaging>jar</packaging>
 
   <dependencies>
@@ -21,16 +21,14 @@
       <groupId>io.netifi.proteus.quickstart</groupId>
       <artifactId>service-idl</artifactId>
       <version>${project.version}</version>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.netifi.proteus</groupId>
       <artifactId>proteus-spring-boot-starter</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
     </dependency>
   </dependencies>
 
