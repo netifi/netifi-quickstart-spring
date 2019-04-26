@@ -1,17 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE' apply false
+    id 'com.google.protobuf' version '0.8.8' apply false
+    id 'com.diffplug.gradle.spotless' version '3.21.1' apply false
+}
+
 subprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'com.google.protobuf'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.diffplug.gradle.spotless'
 
-    group 'io.netifi.proteus.quickstart'
-    version '1.0.0'
+    dependencyManagement {
 
-    ext {
-        protobufVersion = '3.6.0'
-        proteusVersion = '0.7.15'
-        proteusSpringVersion = '0.3.0'
-        springbomVersion = 'Cairo-SR1'
+        dependencies {
+            dependency "io.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
+            dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
+            dependency "com.google.protobuf:protoc:${protobufVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
+            dependency "io.rsocket.rpc:rsocket-rpc-core:${rsocketRpcVersion}"
+            dependency "io.rsocket:rsocket-core:${rsocketVersion}"
+            dependency "io.rsocket:rsocket-transport-netty:${rsocketVersion}"
+        }
     }
 
     repositories {
         jcenter()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
+        maven {
+            url 'https://dl.bintray.com/netifi/netifi-oss/'
+        }
+    }
+
+    spotless {
+        java {
+            googleJavaFormat()
+            removeUnusedImports()
+        }
     }
 }
