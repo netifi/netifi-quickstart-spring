@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
@@ -7,29 +8,22 @@
     <parent>
         <groupId>io.netifi.proteus.quickstart</groupId>
         <artifactId>proteus-quickstart</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.6.1</version>
     </parent>
 
     <artifactId>service-idl</artifactId>
     <name>service-idl</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.6.1</version>
     <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>io.rsocket.rpc</groupId>
             <artifactId>rsocket-rpc-core</artifactId>
-            <version>${rsocketRpcVersion}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.rsocket.rpc</groupId>
-                    <artifactId>rsocket-rpc-protobuf</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>${protobufVersion}</version>
         </dependency>
     </dependencies>
 
@@ -38,20 +32,39 @@
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
-                <version>1.5.0.Final</version>
+                <version>1.6.2</version>
             </extension>
         </extensions>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/protobuf/java</source>
+                                <source>${project.build.directory}/generated-sources/protobuf/rsocketRpc</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
-                <version>0.5.1</version>
+                <version>0.6.1</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protobufVersion}:exe:${os.detected.classifier}
+                    <protocArtifact>
+                        com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
                     </protocArtifact>
                     <pluginId>rsocketRpc</pluginId>
                     <pluginArtifact>
-                        io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}:exe:${os.detected.classifier}
+                        io.rsocket.rpc:rsocket-rpc-protobuf:${rsocket.rpc.version}:exe:${os.detected.classifier}
                     </pluginArtifact>
                 </configuration>
                 <executions>
@@ -65,5 +78,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

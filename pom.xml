@@ -1,33 +1,110 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>io.netifi.proteus.quickstart</groupId>
     <artifactId>proteus-quickstart</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.6.1</version>
     <packaging>pom</packaging>
     <name>multi</name>
+
     <modules>
         <module>client</module>
         <module>service</module>
         <module>service-idl</module>
     </modules>
+
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <proteusVersion>0.9.0</proteusVersion>
-        <proteusSpringVersion>0.4.2</proteusSpringVersion>
-        <rsocketRpcVersion>0.2.0</rsocketRpcVersion>
-        <protobufVersion>3.6.0</protobufVersion>
-        <log4j2Version>2.9.0</log4j2Version>
+        <proteus.spring.version>1.6.1</proteus.spring.version>
+        <spring.boot.bom.version>2.1.4.RELEASE</spring.boot.bom.version>
+        <rsocket.rpc.version>0.2.13.3</rsocket.rpc.version>
+        <rsocket.version>0.11.17.2</rsocket.version>
+        <protobuf.version>3.6.1</protobuf.version>
+        <hibernate.validator.version>6.0.16.Final</hibernate.validator.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.netifi.proteus</groupId>
+                <artifactId>proteus-spring-boot-starter</artifactId>
+                <version>${proteus.spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket.rpc</groupId>
+                <artifactId>rsocket-rpc-core</artifactId>
+                <version>${rsocket.rpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket</groupId>
+                <artifactId>rsocket-core</artifactId>
+                <version>${rsocket.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rsocket</groupId>
+                <artifactId>rsocket-transport-netty</artifactId>
+                <version>${rsocket.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <repositories>
-        <repository>
-            <id>netifi-oss</id>
-            <url>https://dl.bintray.com/netifi/netifi-oss/</url>
-        </repository>
         <repository>
             <id>jcenter</id>
             <url>https://jcenter.bintray.com/</url>
         </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+        <repository>
+            <id>netifi-oss</id>
+            <url>https://dl.bintray.com/netifi/netifi-oss/</url>
+        </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
