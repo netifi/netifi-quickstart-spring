@@ -1,7 +1,7 @@
-# proteus-spring-quickstart
-Source code for the [Proteus Spring Boot QuickStart](https://www.netifi.com/getstarted-springboot).
+# netifi-spring-quickstart
+Source code for the [Netifi Spring Boot QuickStart](https://www.netifi.com/getstarted-springboot).
 
-This project provides a scaffolding for getting up and running quickly with [Netifi Proteus](http://www.netifi.com/proteus.html) on [Spring Boot](https://spring.io/projects/spring-boot).
+This project provides a scaffolding for getting up and running quickly with [Netifi](http://www.netifi.com/) on [Spring Boot](https://spring.io/projects/spring-boot).
 
 The project comes with a simple client and service. The client sends the word `World` to the service and the service responds with the message `Hello, World! from {service name}`.
 
@@ -13,18 +13,18 @@ This repo contains the following projects:
 * [service-idl](service-idl) - Definition of the API served by the service
 
 ## Prerequisites
-The Proteus Spring QuickStart requires you have the following items installed on your machine:
+The Netifi Spring QuickStart requires you have the following items installed on your machine:
 
 * [Docker](https://docs.docker.com/install/)
 
 ## Getting Started
-Follow the steps below to get a client and service communicating via Proteus in just a few short minutes.
+Follow the steps below to get a client and service communicating via the Netifi Broker in just a few short minutes.
 
-1. In a new terminal window, pull the latest Proteus Broker Docker image by running the following command:
+1. In a new terminal window, pull the latest Netifi Broker Docker image by running the following command:
 
-        docker pull netifi/proteus:1.6.1
+        docker pull netifi/broker:1.6.2
         
-2. Next, run the following command to start the Proteus Broker:
+2. Next, run the following command to start the Netifi Broker:
 
         docker run \
         -p 7001:7001 \
@@ -37,7 +37,7 @@ Follow the steps below to get a client and service communicating via Proteus in 
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
         '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
-        netifi/proteus:1.6.1
+        netifi/broker:1.6.2
 
 3. In a new terminal window, start the example quickstart service by running the following command:
 
@@ -57,10 +57,10 @@ Follow the steps below to get a client and service communicating via Proteus in 
     
         2018-09-03 14:16:39.571  INFO 46998 --- [           main] i.n.p.quickstart.client.ClientRunner     : message: "Hello, World! from SayHello"
 
-Congratulations! You were able to get a Proteus Broker up and running and send a message between a client and a microservice.
+Congratulations! You were able to get a Netifi Broker up and running and send a message between a client and a microservice.
 
 ## Bugs and Feedback
-For bugs, questions, and discussions please use the [Github Issues](https://github.com/netifi/proteus-spring-quickstart/issues).
+For bugs, questions, and discussions please use the [Github Issues](https://github.com/netifi/netifi-quickstart-spring/issues).
 
 ## License
 Copyright 2018 [Netifi Inc.](https://www.netifi.com)

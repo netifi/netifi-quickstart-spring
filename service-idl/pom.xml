@@ -6,14 +6,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.netifi.proteus.quickstart</groupId>
-    <artifactId>proteus-quickstart</artifactId>
-    <version>1.6.1</version>
+    <groupId>com.netifi.quickstart</groupId>
+    <artifactId>netifi-quickstart-spring</artifactId>
+    <version>1.6.2</version>
   </parent>
 
   <artifactId>service-idl</artifactId>
   <name>service-idl</name>
-  <version>1.6.1</version>
+  <version>1.6.2</version>
   <packaging>jar</packaging>
 
   <dependencies>
