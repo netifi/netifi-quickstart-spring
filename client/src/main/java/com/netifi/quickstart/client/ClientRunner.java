@@ -1,8 +1,8 @@
-package io.netifi.proteus.quickstart.client;
+package com.netifi.quickstart.client;
 
-import io.netifi.proteus.quickstart.service.protobuf.HelloRequest;
-import io.netifi.proteus.quickstart.service.protobuf.HelloServiceClient;
-import io.netifi.proteus.spring.core.annotation.Group;
+import com.netifi.quickstart.service.HelloRequest;
+import com.netifi.quickstart.service.HelloServiceClient;
+import com.netifi.spring.core.annotation.Group;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;

@@ -1,4 +1,4 @@
-package io.netifi.proteus.quickstart.service;
+package com.netifi.quickstart.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

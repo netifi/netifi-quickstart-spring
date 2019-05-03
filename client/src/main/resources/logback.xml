@@ -10,11 +10,11 @@
         </encoder>
     </appender>
 
-    <logger name="io.netifi.proteus.quickstart" level="info" additivity="false">
+    <logger name="com.netifi.quickstart" level="info" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
-    <logger name="io.netifi.proteus" level="info" additivity="false">
+    <logger name="com.netifi" level="info" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 

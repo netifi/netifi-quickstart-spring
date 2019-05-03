@@ -10,9 +10,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
-  <groupId>io.netifi.proteus.quickstart</groupId>
-  <artifactId>proteus-quickstart</artifactId>
-  <version>1.6.1</version>
+  <groupId>com.netifi.quickstart</groupId>
+  <artifactId>netifi-quickstart-spring</artifactId>
+  <version>1.6.2</version>
   <packaging>pom</packaging>
   <name>multi</name>
 
@@ -25,7 +25,7 @@
   <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <proteus.spring.version>1.6.1</proteus.spring.version>
+    <netifi.spring.version>1.6.2</netifi.spring.version>
     <spring.boot.bom.version>2.1.4.RELEASE</spring.boot.bom.version>
     <rsocket.rpc.version>0.2.13.3</rsocket.rpc.version>
     <rsocket.version>0.11.17.2</rsocket.version>
@@ -36,9 +36,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.netifi.proteus</groupId>
-        <artifactId>proteus-spring-boot-starter</artifactId>
-        <version>${proteus.spring.version}</version>
+        <groupId>com.netifi</groupId>
+        <artifactId>netifi-spring-boot-starter</artifactId>
+        <version>${netifi.spring.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -87,8 +87,8 @@
       <url>https://repo.spring.io/milestone</url>
     </repository>
     <repository>
-      <id>netifi-oss</id>
-      <url>https://dl.bintray.com/netifi/netifi-oss/</url>
+      <id>mavenCentral</id>
+      <url>https://mvnrepository.com/repos/central</url>
     </repository>
   </repositories>
   <pluginRepositories>
