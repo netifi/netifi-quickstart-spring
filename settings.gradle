@@ -13,7 +13,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'proteus-spring-quickstart'
+rootProject.name = 'netifi-quickstart-spring'
 include 'client'
 include 'service'
 include 'service-idl'

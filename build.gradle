@@ -14,7 +14,7 @@ subprojects {
     dependencyManagement {
 
         dependencies {
-            dependency "io.netifi.proteus:proteus-spring-boot-starter:${proteusSpringVersion}"
+            dependency "com.netifi:netifi-spring-boot-starter:${netifiSpringVersion}"
             dependency "com.google.protobuf:protobuf-java:${protobufVersion}"
             dependency "com.google.protobuf:protoc:${protobufVersion}"
             dependency "io.rsocket.rpc:rsocket-rpc-protobuf:${rsocketRpcVersion}"
@@ -28,9 +28,7 @@ subprojects {
         jcenter()
         maven { url 'https://repo.spring.io/snapshot' }
         maven { url 'https://repo.spring.io/milestone' }
-        maven {
-            url 'https://dl.bintray.com/netifi/netifi-oss/'
-        }
+        mavenCentral()
     }
 
     spotless {

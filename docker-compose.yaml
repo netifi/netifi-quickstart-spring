@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   broker1:
-    image: netifi/proteus:1.6.1
+    image: netifi/broker:1.6.2
     restart: always
     networks:
       - netifi
