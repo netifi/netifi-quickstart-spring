@@ -9,7 +9,6 @@ services:
       - netifi
     environment:
       BROKER_SERVER_OPTS: >
-        '-Dnetifi.broker.console.enabled=true'
         '-Dnetifi.broker.ssl.disabled=true'
         '-Dnetifi.authentication.0.accessKey=9007199254740991'
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='
@@ -19,6 +18,5 @@ services:
       - "7001:7001"
       - "8001:8001"
       - "8101:8101"
-      - "9000:9000"
 networks:
   netifi:
