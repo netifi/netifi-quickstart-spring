@@ -73,10 +73,7 @@
       <id>netifi-jcenter</id>
       <url>https://sonatype.netifiinc.com/repository/jcenter/</url>
     </repository>
-    <repository>
-      <id>netifi-mavenCentral</id>
-      <url>https://sonatype.netifiinc.com/repository/maven-central/</url>
-    </repository>
+    <!--todo: remove on release-->
     <repository>
       <id>netifi-maven-releases</id>
       <url>https://sonatype.netifiinc.com/repository/netifi-maven-releases/</url>

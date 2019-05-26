@@ -32,13 +32,7 @@ subprojects {
                 password = "${netifiReadOnlyPassword}"
             }
         }
-        maven {
-            url 'https://sonatype.netifiinc.com/repository/maven-central/'
-            credentials {
-                username = "${netifiReadOnlyUsername}"
-                password = "${netifiReadOnlyPassword}"
-            }
-        }
+        /*todo: remove on release*/
         maven {
             url 'https://sonatype.netifiinc.com/repository/netifi-maven-releases/'
             credentials {
