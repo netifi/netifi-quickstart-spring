@@ -1,7 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.4.RELEASE' apply false
+    id 'org.springframework.boot' version '2.1.5.RELEASE' apply false
     id 'com.google.protobuf' version '0.8.8' apply false
-    id 'com.diffplug.gradle.spotless' version '3.21.1' apply false
+    id 'com.diffplug.gradle.spotless' version '3.23.0' apply false
 }
 
 subprojects {
@@ -25,10 +25,21 @@ subprojects {
     }
 
     repositories {
-        jcenter()
-        maven { url 'https://repo.spring.io/snapshot' }
-        maven { url 'https://repo.spring.io/milestone' }
-        mavenCentral()
+        maven {
+            url 'https://sonatype.netifiinc.com/repository/jcenter/'
+            credentials {
+                username = "${netifiReadOnlyUsername}"
+                password = "${netifiReadOnlyPassword}"
+            }
+        }
+        /*todo: remove on release*/
+        maven {
+            url 'https://sonatype.netifiinc.com/repository/netifi-maven-releases/'
+            credentials {
+                username = "${netifiReadOnlyUsername}"
+                password = "${netifiReadOnlyPassword}"
+            }
+        }
     }
 
     spotless {
