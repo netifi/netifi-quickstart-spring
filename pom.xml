@@ -6,13 +6,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.4.RELEASE</version>
+    <version>2.1.5.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>com.netifi.quickstart</groupId>
   <artifactId>netifi-quickstart-spring</artifactId>
-  <version>1.6.3</version>
+  <version>1.6.4</version>
   <packaging>pom</packaging>
   <name>multi</name>
 
@@ -25,10 +25,10 @@
   <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <netifi.spring.version>1.6.3</netifi.spring.version>
-    <spring.boot.bom.version>2.1.4.RELEASE</spring.boot.bom.version>
-    <rsocket.rpc.version>0.2.16</rsocket.rpc.version>
-    <rsocket.version>0.11.21</rsocket.version>
+    <netifi.spring.version>1.6.4</netifi.spring.version>
+    <spring.boot.bom.version>2.1.5.RELEASE</spring.boot.bom.version>
+    <rsocket.rpc.version>0.2.18</rsocket.rpc.version>
+    <rsocket.version>0.12.2-RC3</rsocket.version>
     <protobuf.version>3.6.1</protobuf.version>
     <hibernate.validator.version>6.0.16.Final</hibernate.validator.version>
   </properties>
@@ -70,41 +70,8 @@
 
   <repositories>
     <repository>
-      <id>jcenter</id>
-      <url>https://jcenter.bintray.com/</url>
-    </repository>
-    <repository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-    </repository>
-    <repository>
-      <id>mavenCentral</id>
-      <url>https://mvnrepository.com/repos/central</url>
+      <id>bintray</id>
+      <url>http://jcenter.bintray.com/</url>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>spring-snapshots</id>
-      <name>Spring Snapshots</name>
-      <url>https://repo.spring.io/snapshot</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/milestone</url>
-    </pluginRepository>
-  </pluginRepositories>
-
 </project>

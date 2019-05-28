@@ -33,6 +33,7 @@ Follow the steps below to get a client and service communicating via the Netifi 
         -p 9000:9000 \
         -e BROKER_SERVER_OPTS=" \
         '-Dnetifi.broker.console.enabled=true' \
+        '-Dnetifi.broker.ssl.disabled=true' \
         '-Dnetifi.authentication.0.accessKey=9007199254740991'  \
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
