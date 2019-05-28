@@ -73,10 +73,5 @@
       <id>bintray</id>
       <url>http://jcenter.bintray.com/</url>
     </repository>
-    <!--todo: remove on release-->
-    <repository>
-      <id>mavenCentral</id>
-      <url>https://mvnrepository.com/repos/central</url>
-    </repository>
   </repositories>
 </project>
