@@ -25,21 +25,8 @@ subprojects {
     }
 
     repositories {
-        maven {
-            url 'https://sonatype.netifiinc.com/repository/jcenter/'
-            credentials {
-                username = "${netifiReadOnlyUsername}"
-                password = "${netifiReadOnlyPassword}"
-            }
-        }
-        /*todo: remove on release*/
-        maven {
-            url 'https://sonatype.netifiinc.com/repository/netifi-maven-releases/'
-            credentials {
-                username = "${netifiReadOnlyUsername}"
-                password = "${netifiReadOnlyPassword}"
-            }
-        }
+        jcenter()
+        mavenCentral()
     }
 
     spotless {
