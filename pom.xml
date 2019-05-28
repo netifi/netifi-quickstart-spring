@@ -70,13 +70,8 @@
 
   <repositories>
     <repository>
-      <id>netifi-jcenter</id>
-      <url>https://sonatype.netifiinc.com/repository/jcenter/</url>
-    </repository>
-    <!--todo: remove on release-->
-    <repository>
-      <id>netifi-maven-releases</id>
-      <url>https://sonatype.netifiinc.com/repository/netifi-maven-releases/</url>
+      <id>bintray</id>
+      <url>http://jcenter.bintray.com/</url>
     </repository>
   </repositories>
 </project>
