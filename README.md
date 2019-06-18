@@ -24,20 +24,33 @@ Follow the steps below to get a client and service communicating via the Netifi 
 
         docker pull netifi/broker:1.6.4
         
-2. Next, run the following command to start the Netifi Broker:
+2. Generate Admin keys for your local broker
+
+   Today these keys don't really offer you any value, but they are required.
+   In the future they'll be used for you access the management interface of the brokers
+   you run.
+
+        docker run --rm \
+        -e BROKER_SERVER_OPTS="-Dnetifi.broker.generateAccessToken=true" \
+        netifi/broker:1.6.4
+        # <jvm flags omitted for documentation>
+        # getAccessKey: 790712705687435
+        # accessToken: poZBvOv8eBEwKelLt3gHyZUJaeM=
+
+3. Next, run the following command to start the Netifi Broker:
 
         docker run \
         -p 7001:7001 \
         -p 8001:8001 \
         -p 8101:8101 \
-        -p 9000:9000 \
         -e BROKER_SERVER_OPTS=" \
-        '-Dnetifi.broker.console.enabled=true' \
-        '-Dnetifi.broker.ssl.disabled=true' \
-        '-Dnetifi.authentication.0.accessKey=9007199254740991'  \
-        '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
-        '-Dnetifi.broker.admin.accessKey=9007199254740991' \
-        '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
+        '-Dnetifi.broker.admin.accessKey=<generated ADMIN key>' \
+        '-Dnetifi.broker.admin.accessToken=<generated ADMIN token>' \
+        '-Dnetifi.enterprise.port=443' \
+        '-Dnetifi.enterprise.address=<supplied EE broker url i.e. foo.ent.netifi.com>' \
+        '-Dnetifi.enterprise.accessKey=<supplied HOSTED broker key>' \
+        '-Dnetifi.enterprise.accessToken=<supplied HOSTED broker token>' \
+        '-Dnetifi.broker.cluster.clusterName=<broker cluster name you create>'" \
         netifi/broker:1.6.4
 
 3. In a new terminal window, start the example quickstart service by running the following command:
