@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   broker1:
-    image: netifi/broker:1.6.4
+    image: netifi/broker:1.6.6
     restart: always
     networks:
       - netifi

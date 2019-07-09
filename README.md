@@ -22,7 +22,7 @@ Follow the steps below to get a client and service communicating via the Netifi 
 
 1. In a new terminal window, pull the latest Netifi Broker Docker image by running the following command:
 
-        docker pull netifi/broker:1.6.4
+        docker pull netifi/broker:1.6.6
         
 2. Next, run the following command to start the Netifi Broker:
 
@@ -30,15 +30,13 @@ Follow the steps below to get a client and service communicating via the Netifi 
         -p 7001:7001 \
         -p 8001:8001 \
         -p 8101:8101 \
-        -p 9000:9000 \
         -e BROKER_SERVER_OPTS=" \
-        '-Dnetifi.broker.console.enabled=true' \
         '-Dnetifi.broker.ssl.disabled=true' \
         '-Dnetifi.authentication.0.accessKey=9007199254740991'  \
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
         '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
-        netifi/broker:1.6.4
+        netifi/broker:1.6.6
 
 3. In a new terminal window, start the example quickstart service by running the following command:
 
