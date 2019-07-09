@@ -41,11 +41,11 @@ Follow the steps below to get a client and service communicating via the Netifi 
 3. In a new terminal window, start the example quickstart service by running the following command:
 
         ./gradlew :service:bootRun
-        
+
 4. Next, in a new terminal window, start the example quickstart client by running the following command:
 
         ./gradlew :client:bootRun
-        
+
 5. If successful, the client will have sent the word, `World`, to the service and received the response `Hello, World! from SayHello`. You can verify this by checking the terminals for the following:
 
     In the service terminal you will see the following message:
