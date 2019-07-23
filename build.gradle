@@ -1,13 +1,12 @@
 plugins {
     id 'org.springframework.boot' version '2.1.5.RELEASE' apply false
-    id 'com.google.protobuf' version '0.8.8' apply false
+    id 'com.google.protobuf' version '0.8.10' apply false
     id 'com.diffplug.gradle.spotless' version '3.23.0' apply false
 }
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'com.google.protobuf'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.diffplug.gradle.spotless'
 

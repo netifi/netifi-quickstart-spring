@@ -1,49 +1,13 @@
-dependencies {
-    implementation "io.rsocket.rpc:rsocket-rpc-core"
-    implementation "com.google.protobuf:protobuf-java"
+plugins {
+    id 'java'
 }
 
 sourceSets {
     main {
-        proto { srcDir 'src/main/proto' }
+        resources { srcDir 'src/main/proto' }
     }
 
     test {
-        proto { srcDir 'src/test/proto' }
+        resources { srcDir 'src/test/proto' }
     }
-}
-
-protobuf {
-    generatedFilesBaseDir = "${projectDir}/src/generated"
-
-    protoc {
-        artifact = "com.google.protobuf:protoc"
-    }
-
-    plugins {
-        rsocketRpc {
-            artifact = "io.rsocket.rpc:rsocket-rpc-protobuf"
-        }
-    }
-
-    generateProtoTasks {
-        ofSourceSet('main')*.plugins {
-            rsocketRpc {}
-        }
-    }
-}
-
-idea {
-    module {
-        sourceDirs += file("src/main/proto")
-        sourceDirs += file("src/generated/main/java")
-        sourceDirs += file("src/generated/main/rsocketRpc")
-
-        generatedSourceDirs += file('src/generated/main/java')
-        generatedSourceDirs += file('src/generated/main/rsocketRpc')
-    }
-}
-
-clean {
-    delete 'src/generated'
 }
