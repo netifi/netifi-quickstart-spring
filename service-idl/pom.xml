@@ -8,12 +8,12 @@
   <parent>
     <groupId>com.netifi.quickstart</groupId>
     <artifactId>netifi-quickstart-spring</artifactId>
-    <version>1.6.8</version>
+    <version>1.6.9</version>
   </parent>
 
   <artifactId>service-idl</artifactId>
   <name>service-idl</name>
-  <version>1.6.8</version>
+  <version>1.6.9</version>
   <packaging>jar</packaging>
 
   <dependencies>

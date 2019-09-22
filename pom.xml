@@ -12,7 +12,7 @@
 
   <groupId>com.netifi.quickstart</groupId>
   <artifactId>netifi-quickstart-spring</artifactId>
-  <version>1.6.8</version>
+  <version>1.6.9</version>
   <packaging>pom</packaging>
   <name>multi</name>
 
@@ -25,7 +25,7 @@
   <properties>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-    <netifi.spring.version>1.6.8</netifi.spring.version>
+    <netifi.spring.version>1.6.9</netifi.spring.version>
     <spring.boot.bom.version>2.1.5.RELEASE</spring.boot.bom.version>
     <rsocket.rpc.version>0.2.18</rsocket.rpc.version>
     <rsocket.version>0.12.2-RC4</rsocket.version>
