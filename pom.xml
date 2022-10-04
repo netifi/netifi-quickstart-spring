@@ -29,7 +29,7 @@
     <spring.boot.bom.version>2.1.5.RELEASE</spring.boot.bom.version>
     <rsocket.rpc.version>0.2.18</rsocket.rpc.version>
     <rsocket.version>0.12.2-RC4</rsocket.version>
-    <protobuf.version>3.6.1</protobuf.version>
+    <protobuf.version>3.16.3</protobuf.version>
     <hibernate.validator.version>6.0.16.Final</hibernate.validator.version>
   </properties>
 
